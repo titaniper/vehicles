@@ -22,7 +22,7 @@ class VehicleItemAdapter: RecyclerView.Adapter<BindingViewHolder<MainVehicleItem
         holder.binding.data = vehicles[position]
         holder.binding.adapter = this
         holder.binding.position = position
-        holder.binding.capacityText = "적재용량 : " + vehicles[position].capacity
+        holder.binding.capacityText = String.format("적재용량 : %.1ft", (vehicles[position].capacity * 0.001))
     }
 
     private val vehicles = ArrayList<VehicleInfo>()

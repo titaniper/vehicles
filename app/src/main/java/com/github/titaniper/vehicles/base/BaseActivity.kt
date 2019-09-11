@@ -14,7 +14,6 @@ abstract class BaseActivity<T : ViewDataBinding, RM : BaseViewModel> : AppCompat
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Timber.plant(Timber.DebugTree())
         viewDataBinding = DataBindingUtil.setContentView(this, layoutResourceId)
     }
 }
