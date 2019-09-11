@@ -1,5 +1,6 @@
 package com.github.titaniper.vehicles.model.service
 
+import com.github.titaniper.vehicles.model.VehicleInfo
 import com.github.titaniper.vehicles.model.response.Response
 import com.github.titaniper.vehicles.model.response.LoginResponse
 import io.reactivex.Single
@@ -13,4 +14,15 @@ interface VehicleService {
         @Field("password") password: String,
         @Field("deviceType") deviceType: String
     ): Single<Response<LoginResponse>>
+
+    @GET("/mobile/v1/users/self/vehicles/")
+    fun vehicles(@Header("Authorization") token: String): Single<Response<List<VehicleInfo>>>
+
+    @FormUrlEncoded
+    @PUT("/mobile/v1/users/self/vehicles/{vehicle}/favorite")
+    fun favorite(
+            @Header("Authorization") token: String,
+            @Path("vehicle") vehicle: String,
+            @Field("status") status: Boolean
+    ): Single<Response<String>>
 }

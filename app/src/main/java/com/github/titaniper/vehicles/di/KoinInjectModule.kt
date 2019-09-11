@@ -4,7 +4,9 @@ import com.github.titaniper.vehicles.Constants
 import com.github.titaniper.vehicles.model.service.VehicleService
 import com.github.titaniper.vehicles.repository.DataRepository
 import com.github.titaniper.vehicles.repository.DataRepositoryImpl
+import com.github.titaniper.vehicles.view.adapter.VehicleItemAdapter
 import com.github.titaniper.vehicles.view.login.LoginViewModel
+import com.github.titaniper.vehicles.view.main.MainViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.androidx.viewmodel.ext.koin.viewModel
@@ -31,7 +33,6 @@ val retrofitPart = module {
             .create(VehicleService::class.java)
     }
 }
-val adapterPart = module {}
 
 val modelPart = module {
     factory<DataRepository> {
@@ -43,6 +44,9 @@ val viewModelPart = module {
     viewModel {
         LoginViewModel(get())
     }
+    viewModel {
+        MainViewModel(get())
+    }
 }
 
-val koinInjectModule = listOf(retrofitPart, adapterPart, modelPart, viewModelPart)
+val koinInjectModule = listOf(retrofitPart, modelPart, viewModelPart)

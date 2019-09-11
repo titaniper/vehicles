@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="capacityText"
+            type="java.lang.String" />
+        <variable
+            name="position"
+            type="java.lang.Integer" />
+        <variable
+            name="adapter"
+            type="com.github.titaniper.vehicles.view.adapter.VehicleItemAdapter" />
+        <variable
+            name="data"
+            type="com.github.titaniper.vehicles.model.VehicleInfo" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="10dp">
+                <LinearLayout
+                    android:padding="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{data.description}"
+                        android:textSize="12sp"
+                        android:textColor="#99000000"
+                        android:lineHeight="16sp"/>
+
+                    <TextView
+                        android:layout_marginTop="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{data.licenseNumber}"
+                        android:textSize="20sp"
+                        android:textColor="#de000000"
+                        android:lineHeight="30sp"/>
+
+                    <LinearLayout
+                        android:layout_marginTop="8dp"
+                        android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                        <CheckBox
+                            android:id="@+id/main_vehicle_item_favorite"
+                            android:layout_width="17dp"
+                            android:layout_height="17dp"
+                            android:checked="@={adapter.map[position]}"
+                            android:background="@drawable/selector_favorite"
+                            android:button="@null"/>
+
+                        <TextView
+                            android:layout_marginLeft="6dp"
+                            android:id="@+id/main_vehicle_item_capacity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text='@={capacityText}'
+                            android:textSize="14sp"
+                            android:textColor="#99000000"
+                            android:lineHeight="18sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+</layout>
