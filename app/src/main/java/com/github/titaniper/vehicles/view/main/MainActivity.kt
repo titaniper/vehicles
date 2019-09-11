@@ -1,9 +1,8 @@
-package com.github.titaniper.vehicles
+package com.github.titaniper.vehicles.view.main
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import com.github.titaniper.vehicles.R
 
 class MainActivity : AppCompatActivity() {
 
