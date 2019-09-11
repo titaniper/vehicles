@@ -4,7 +4,6 @@ import com.github.titaniper.vehicles.Constants
 import com.github.titaniper.vehicles.model.service.VehicleService
 import com.github.titaniper.vehicles.repository.DataRepository
 import com.github.titaniper.vehicles.repository.DataRepositoryImpl
-import com.github.titaniper.vehicles.view.adapter.VehicleItemAdapter
 import com.github.titaniper.vehicles.view.login.LoginViewModel
 import com.github.titaniper.vehicles.view.main.MainViewModel
 import okhttp3.OkHttpClient

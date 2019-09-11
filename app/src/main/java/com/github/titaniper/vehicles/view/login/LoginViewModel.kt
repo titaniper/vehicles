@@ -1,6 +1,5 @@
 package com.github.titaniper.vehicles.view.login
 
-import android.text.TextUtils
 import com.github.titaniper.vehicles.base.BaseViewModel
 import com.github.titaniper.vehicles.repository.DataRepository
 import androidx.lifecycle.MutableLiveData

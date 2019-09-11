@@ -1,7 +1,5 @@
 package com.github.titaniper.vehicles.view.main
 
-//import android.support.design.widget.Snackbar
-
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
