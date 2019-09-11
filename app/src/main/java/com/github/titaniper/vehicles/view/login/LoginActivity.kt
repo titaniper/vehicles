@@ -44,5 +44,6 @@ class LoginActivity : BaseActivity<LoginActivityBinding, LoginViewModel>() {
         val intent = Intent(this, MainActivity::class.java)
         intent.putExtra(Constants.TOKEN_KEY, token)
         startActivity(intent)
+        finish()
     }
 }
