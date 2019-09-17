@@ -6,10 +6,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import timber.log.Timber
 
-abstract class BaseActivity<T : ViewDataBinding, RM : BaseViewModel> : AppCompatActivity() {
+abstract class BaseActivity<T : ViewDataBinding, VM : BaseViewModel> : AppCompatActivity() {
     lateinit var viewDataBinding: T
     abstract val layoutResourceId: Int
-    abstract val viewModel: RM
+    abstract val viewModel: VM
     private var isSetBackButtonValid = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
